@@ -8,7 +8,7 @@ This tool assumes a certain project structure. Meaning, components will be only 
 ### To run
 
 Before running the tool, you must add this script to your project package.json
-`"create:component": "cd create-component && yarn create:component"`
+`"create:component": "cd createReactComponent && yarn create:component"`
 
 Then to create a component with a name of your choosing run
 `yarn create:component YOUR_NAME`

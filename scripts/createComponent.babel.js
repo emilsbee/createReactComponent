@@ -5,10 +5,6 @@ import chalk from 'chalk';
 import {argv} from 'yargs';
 import fs from 'fs';
 
-// TO RUN 
-// gulp --gulpfile scripts/createComponent.babel.js --name "Penis"
-
-
 
 // Function called to throw any kind of an error
 const createError = (errorMessage) => {
@@ -30,14 +26,24 @@ if (!nameArg || nameArg === true || nameArg.replace(' ', '').length === 0) {
 // Converts any name given by user to one where the first character is uppercase
 const name = nameArg.charAt(0).toUpperCase() + nameArg.slice(1)
 
-const destDir = `../src/components/${name}`
+// Preset directories
+const destDir = `../../src/components/${name}`
 
 const assertContainerDoesNotExist = (done) => {
-    const containerDirectoryExists = fs.existsSync(`../src/components/${name}`)
+    const containerDirectoryExists = fs.existsSync(`../../src/components/${name}`)
     if (containerDirectoryExists) {
-        createError(`Could not create container, because the directory: '../src/components/${name}' already exists`)
+        createError(`Could not create component, because the directory: '../../src/components/${name}' already exists`)
         done()
     }
+    done()
+}
+
+const assertComponentsFolderExist = (done) => {
+    const componentsDirectoryExists = fs.existsSync(`../../src/components`)
+    if (!componentsDirectoryExists) {
+        createError('Could not create component because src/components directory does not exist')
+        done()
+    } 
     done()
 }
 
@@ -79,6 +85,7 @@ const logSuccess = (done) => {
   
 exports.default = series(
     assertContainerDoesNotExist,
+    assertComponentsFolderExist,
     parallel(
         component,
         story,

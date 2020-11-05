@@ -1,20 +1,14 @@
-## This CRA app contains tools to create React components with a terminal command quickly and easily
-
-### Install the prerequisite (dev) packages
+## Creat React component
+This is a tool that creates React components based on pre-defined templates. It comes with node_modules already installed since the overall size isn't too large. Also, it allows to just clone this repository in a React project and almost immediately make use of it without much additional installation or changes in the envirnonment.  
   
-`yarn add -D @babel/core @babel/preset-env @babel/register chalk gulp gulp-cli gulp-footer gulp-rename gulp-template yargs` 
-  
-
-### Files and code to include
-
-This was developed within a CRA app since it would be used in the same or similar environment anyways. In order to make the tool work in other projects, one must copy the **.babelrc** file with its contents, and the **scripts** folder which includes the gulp task file and templates that are used for creating components. Also, **script** from package.json called "create:component" must be copied over to the new project as well.
-
-
 ### Project structure
 
-This tool assumes a certain project structure. Meaning, components will be only installed in src/components folder. If such folder isn't present, the tool won't work. Therefore, the **scripts** folder must be placed at the root of the project.
+This tool assumes a certain project structure. Meaning, components will be only installed in src/components folder. If such folder isn't present, the tool won't work. Therefore, this repository must be cloned at the root of the project.
 
 ### To run
 
-To run the tool and create a component with a name of your choosing
+Before running the tool, you must add this script to your project package.json
+`"create:component": "cd create-component && yarn create:component"`
+
+Then to create a component with a name of your choosing run
 `yarn create:component YOUR_NAME`

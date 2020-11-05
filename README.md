@@ -12,7 +12,7 @@ This was developed within a CRA app since it would be used in the same or simila
 
 ### Project structure
 
-This tool assumes a certain project structure. Meaning, components will be only installed in src/components folder. If such folder isn't present, the tool won't work. 
+This tool assumes a certain project structure. Meaning, components will be only installed in src/components folder. If such folder isn't present, the tool won't work. Therefore, the **scripts** folder must be placed at the root of the project.
 
 ### To run
 

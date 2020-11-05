@@ -30,6 +30,7 @@ if (!nameArg || nameArg === true || nameArg.replace(' ', '').length === 0) {
 // Converts any name given by user to one where the first character is uppercase
 const name = nameArg.charAt(0).toUpperCase() + nameArg.slice(1)
 
+const destDir = `../src/components/${name}`
 
 const assertContainerDoesNotExist = (done) => {
     const containerDirectoryExists = fs.existsSync(`../src/components/${name}`)
@@ -44,30 +45,30 @@ const component = () => {
     return src('templates/Component.js')
         .pipe(rename(`${name}.js`))
         .pipe(template({name}))
-        .pipe(dest(`../src/components/${name}`));
+        .pipe(dest(destDir));
 }
 
 const story = () => {
     return src('templates/Story.js')
         .pipe(rename(`${name}.stories.js`))
         .pipe(template({name}))
-        .pipe(dest(`../src/components/${name}`))
+        .pipe(dest(destDir))
 }
 
 const index = () => {
     return src(`templates/index.js`)
         .pipe(template({name}))
-        .pipe(dest(`../src/components/${name}`))
+        .pipe(dest(destDir))
 }
 
 const styles = () => {
     return src('templates/Styles.scss')
-        .pipe(dest(`../src/components/${name}`))
+        .pipe(dest(destDir))
 }
 
 const styleConstants = () => {
     return src('templates/Constants.scss')
-        .pipe(dest(`../src/components/${name}`))
+        .pipe(dest(destDir))
 }
 
 const logSuccess = (done) => {

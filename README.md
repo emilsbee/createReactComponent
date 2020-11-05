@@ -3,7 +3,7 @@ This is a tool that creates React components based on pre-defined templates. It 
   
 ### Project structure
 
-This tool assumes a certain project structure. Meaning, components will be only installed in src/components folder. If such folder isn't present, the tool won't work. Therefore, this repository must be cloned at the root of the project.
+This tool assumes a certain project structure. Meaning, components will be only installed in src/components folder. If such folder isn't present, the tool won't work. Therefore, this repository must be cloned at the root of the project. Important to note that you should also place this line `createReactComponent/` in your **.gitignore** file.
 
 ### To run
 
@@ -12,3 +12,4 @@ Before running the tool, you must add this script to your project package.json
 
 Then to create a component with a name of your choosing run
 `yarn create:component YOUR_NAME`
+

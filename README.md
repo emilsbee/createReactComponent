@@ -19,5 +19,5 @@ Before running the tool, you must
 `createReactComponent/`
 
 * Then to create a component with a name of your choosing run
-`yarn create:component YOUR_NAME`
+`yarn create:component yourComponentName`
 
